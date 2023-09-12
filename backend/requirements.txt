@@ -1,0 +1,13 @@
+pdfplumber==0.9.0
+openai==0.27.8
+python-multipart==0.0.6
+fastapi==0.97.0
+uvicorn==0.22.0
+python-dotenv==1.0.0
+requests~=2.31.0
+https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.5.0/en_core_web_lg-3.5.0.tar.gz
+langchain==0.0.209
+tiktoken==0.4.0
+faiss-cpu==1.7.4
+asyncio==3.4.3
+sse-starlette==1.6.1

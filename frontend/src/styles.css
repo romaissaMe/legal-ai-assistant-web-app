@@ -1,0 +1,51 @@
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.App {
+  font-family: Montserrat,sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow-x:hidden;
+  overflow-y: hidden;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-start; */
+ 
+}
+.textArea{
+  padding:8px;
+  padding-bottom: 1px;
+  outline:none;
+  border: none;
+  background-color: #E6EEFF;
+  border-bottom: 1px solid #1b2962;
+  border-radius: 10px;
+  text-align: justify;
+  font-size: 18px;
+  resize: none;
+  background-color:#E6EEFF ;
+  color: #4c5661;
+  font-weight: 300;
+  width: 100%;
+}
+
+.textArea::-webkit-scrollbar{
+  width: 0px;
+}
+
+.textArea::placeholder {
+  color: #4c5661;
+}
+.textArea:hover {
+  border-bottom: 2px solid #1b2962;
+}
+.textArea:focus {
+  border-bottom: 2px solid #1b2962;
+}
+.textArea:active{
+  border-bottom: 2px solid #1b2962;
+}
+
+

@@ -1,0 +1,4 @@
+.env
+uploads/
+anonymized/
+__pycache__/
