@@ -2,17 +2,24 @@
 *{
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
 }
 .App {
   font-family: Montserrat,sans-serif;
   width: 100vw;
-  height: 100vh;
   overflow-x:hidden;
   overflow-y: hidden;
-  /* display: flex;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start; */
- 
 }
 .textArea{
   padding:8px;
@@ -48,4 +55,34 @@
   border-bottom: 2px solid #1b2962;
 }
 
+.scrol-box::-webkit-scrollbar-thumb {
+  --tw-border-opacity: 1;
+  background-color: rgba(217,217,227,.8);
+  border-color: rgba(255,255,255,0.5);
+  border-radius: 9999px;
+  border-width: 1px;
+}
+.scrol-box::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 9999px;
+}
 
+.scrol-box::-webkit-scrollbar {
+  height: 1rem;
+  width: 0.5rem;
+}
+.sideBar::-webkit-scrollbar-thumb {
+  --tw-border-opacity: 1;
+  background-color: rgba(217,217,227,.8);
+  border-color: rgba(255,255,255,0.5);
+  border-radius: 9999px;
+  border-width: 1px;
+}
+.sideBar::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 9999px;
+}
+.sideBar::-webkit-scrollbar {
+  height: 1rem;
+  width: 0.5rem;
+}

@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 
 export const useStore = create((set) => ({
-  file:null,
+  currentFile:null,
   questions:[],
   anonymizedText:'',
   conversation:[],
@@ -10,8 +10,9 @@ export const useStore = create((set) => ({
   processingFile:false,
   sources:[],
   showChats:true,
-  setFile:(file)=>{
-    set({file:file});
+  closeSideBar:true,
+  setCurrentFile:(file)=>{
+    set({currentFile:file});
   },
   setAnonymizedText:(text)=>{
     set({anonymizedText:text});
@@ -58,6 +59,35 @@ export const useStore = create((set) => ({
       return { chats: updatedChats };
     });
   },
+  removeChat:(chat_id) => {
+    set((state) => {
+      const updatedChats = state.chats.filter((chat)=> chat.chat_id != chat_id)
+      return { chats: updatedChats };
+    });
+  },
+  updateChats: (chat_id, val) => {
+    set((state) => {
+      const updatedChats = state.chats.map((chat) => {
+        if (chat.chat_id === chat_id) {
+          // If chat_id matches, update the chat_file
+          return {
+            ...chat,
+            title:val.name,
+            chat_file: val,
+          };
+        }
+        // Otherwise, return the chat as is
+        return chat;
+      });
+      return { chats: updatedChats };
+    });
+  },
+  getFileForChat:(chat_id)=>{
+    (state)=>{
+    const chat = state.chats.find((item) => item.chat_id===chat_id)
+    return chat ? chat.title : null;
+  }
+  },
   setCurrentChat:(chat_id)=>{
     set({currentChat:chat_id});
   },
@@ -69,6 +99,12 @@ export const useStore = create((set) => ({
   },
   setShowChats: (val)=>{
     set({showChats:val})
-  }
+  },
+  setCloseSideBar:(val)=>{
+    set({closeSideBar:val})
+  },
+  setSources:(val)=>{
+    set({sources:val})
+  },
 }))
 

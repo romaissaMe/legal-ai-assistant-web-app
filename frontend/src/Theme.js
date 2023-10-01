@@ -13,18 +13,19 @@ const theme = createTheme({
         main:'',
       },
       chatBgc:{
-         main:'#1b2962',
+         main:'rgba(26, 40, 95,0.8)',
       },
       chatsBgc:{
-        main:'#141E47', 
+        main:'#1b2962', 
       }
     
     },
     typography:{
         fontFamily:['Montserrat','sans-serif'].join(','),
-        fontSize: 14,
+        fontSize: '18px',
         logo:{
-            color:'#1b2962'
+            color:'#1b2962',
+
         },
 
         },
@@ -58,7 +59,7 @@ const theme = createTheme({
                     fontWeight: 300,
                     fontSize: 13,
                     border:'1px solid #9db3d0',
-                    
+                    backgroundColor:'#1b2962',
                   },
                 },
                 {

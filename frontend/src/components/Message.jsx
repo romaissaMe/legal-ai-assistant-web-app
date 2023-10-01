@@ -7,9 +7,10 @@ function Message({type,message,image,index}) {
     //const url= process.env.REACT_APP_URL
   const url = 'http://127.0.0.1:8000'
   const conversation = useStore((state)=> state.conversation)
-  const file = useStore((state)=> state.file)
+  const file = useStore((state)=> state.currentFile)
   const setSources = useStore((state)=> state.setSources)
   const setShowChats = useStore((state)=>state.setShowChats)
+  const setCloseSideBar = useStore((state)=>state.setCloseSideBar)
   
   const getSources = async () =>{
     const filenameWithoutExtension = file.name.replace(/\.pdf$/, '')
@@ -20,13 +21,14 @@ function Message({type,message,image,index}) {
       const data = await res.json()
       const src = JSON.parse(data)
       setSources(src['sources'])
+      setCloseSideBar(false)
     }catch(err){
       console.log(err)
     }
 
   }
   return (
-    <Stack direction='row' spacing ={2} sx={{alignItems:'baseline',justifyContent:'baseline',padding:'3px'}} useFlexGap>
+    <Stack direction='row' spacing ={2} sx={{alignItems:'baseline',justifyContent:'baseline',padding:'3px',color:'black'}} useFlexGap>
         <Stack direction={'column'} sx={{fontSize:'12px',alignItems:'center',justifyContent:'center'}} >
             <Box>{type==='chatBot'?'ChatBot':'User'}</Box>
             <Box>{time.toLocaleTimeString()}</Box>
@@ -36,7 +38,7 @@ function Message({type,message,image,index}) {
               {message}
           </Typography>
           {image && 
-          <img src={`/${image}`} alt='img' style={{width:'250px',height:'300px',objectFit:'cover', border: '4px solid rgba(27, 41, 98, 1)', 
+          <img src={`/${image}`} alt='img' style={{width:'250px',height:'300px',objectFit:'cover', border: '4px solid #1b2962', 
           boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
           borderRadius: '8px',
           overflow: 'hidden'}}/>

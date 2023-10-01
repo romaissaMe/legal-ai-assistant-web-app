@@ -16,8 +16,7 @@ export default function App() {
       <Box className="App">
         <CssBaseline />
         <Topbar page={page}/>
-        <Toolbar/>
-        <Box sx={{height:'100%'}}>
+        <Box flexGrow={1} sx={{height:'100%',overflowY:'hidden'}}>
           <Router>
            <Routes>
               <Route path='/' element={<Home setPage={setPage}/>}/>
