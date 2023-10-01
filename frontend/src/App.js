@@ -15,15 +15,17 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <Box className="App">
         <CssBaseline />
+        <Router>
         <Topbar page={page}/>
         <Box flexGrow={1} sx={{height:'100%',overflowY:'hidden'}}>
-          <Router>
+          
            <Routes>
               <Route path='/' element={<Home setPage={setPage}/>}/>
               <Route path='/chat' element={<Chat setPage={setPage}/>}/>
             </Routes>
-          </Router>
+          
         </Box>
+        </Router>
       </Box>
     </ThemeProvider>
   );

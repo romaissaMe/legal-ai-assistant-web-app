@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ForumIcon from '@mui/icons-material/Forum';
 import { useStore } from '../store';
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -20,6 +21,7 @@ function Topbar({page}) {
   const setConversation = useStore((state)=>state.setConversation)
   const setSources = useStore((state)=> state.setSources)
   const {currentFile,setCurrentFile} = useStore()
+  const navigate = useNavigate()
 
   const handleNewChat = async ()=>{
     try {
@@ -52,8 +54,8 @@ function Topbar({page}) {
   return (
       <AppBar position='static' sx={{backgroundColor:'appBar.main',height:'50px',justifyContent:'center'}}>
         <Toolbar>
-          <Typography variant='logo' sx={{ flexGrow: 1,textAlign:'start',fontWeight: 500,fontSize:{xs:'13px',sm:'15px',md:'18px',lg:'18px'}}}>
-            LegalAssist
+          <Typography variant='logo' onClick={()=>navigate('/')} sx={{ flexGrow: 1,textAlign:'start',fontWeight: 500,fontSize:{xs:'13px',sm:'15px',md:'18px',lg:'18px'},cursor:'pointer'}}>
+            <strong>Legal</strong>Assist
           </Typography>
           { page === 'chat' &&
           <> 
