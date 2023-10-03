@@ -52,14 +52,14 @@ function Topbar({page}) {
   }
 
   return (
-      <AppBar position='static' sx={{backgroundColor:'appBar.main',height:'50px',justifyContent:'center'}}>
+      <AppBar position='static' sx={{backgroundColor:'appBar.main',height:'55px',justifyContent:'center'}}>
         <Toolbar>
-          <Typography variant='logo' onClick={()=>navigate('/')} sx={{ flexGrow: 1,textAlign:'start',fontWeight: 500,fontSize:{xs:'13px',sm:'15px',md:'18px',lg:'18px'},cursor:'pointer'}}>
-            <strong>Legal</strong>Assist
+          <Typography variant='logo' onClick={()=>navigate('/')} sx={{ flexGrow: 1,textAlign:'start',fontWeight: 500,fontSize:{xs:'13px',sm:'15px',md:'18px',lg:'18px'},cursor:'pointer',color:'#0047AB'}}>
+            <strong style={{color:'#4169E1'}}>Legal</strong>Assist
           </Typography>
           { page === 'chat' &&
           <> 
-          <IconButton  sx={{display:{xs:'block',sm:'block',md:'none',lg:'none',color:'darkblue'},marginRight:'10px'}} onClick={handleChatsClick} ><Stack direction={'row-reverse'} gap={'1px'} >chats <ForumIcon size='large'/></Stack></IconButton>
+          <IconButton  sx={{display:{xs:'block',sm:'block',md:'none',lg:'none',color:'darkblue'},marginRight:'10px'}} onClick={handleChatsClick} ><Stack direction={'row-reverse'} gap={'1px'} sx={{color:'callAction.main'}} >chats <ForumIcon size='large' /></Stack></IconButton>
           <Button variant='mainBtn' sx={{fontSize:{xs:'11px',sm:'13px'},width:{xs:'70px',sm:'80px',md:'90px',lg:'100px'},
                     height:{xs:'30px',sm:'30px',md:'30px',lg:'30px'},
                     paddingTop:'0px',

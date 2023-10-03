@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import Message from './Message'
 import {useStore} from '../store'
-import { Box, Typography } from '@mui/material'
+import {Typography, Button, Stack} from '@mui/material'
 import { LineWobble } from '@uiball/loaders'
+import FileUploadIcon from '@mui/icons-material/FileUpload';
 
 function InitConvo() {
   // const url = process.env.REACT_APP_URL
@@ -111,7 +112,11 @@ function InitConvo() {
     <Typography sx={{color:'darkblue'}}>
       Selected File: {currentFile ? currentFile.name : 'No file selected'}
     </Typography>
-    <button onClick={() => inputRef.current.click()}>Choose File</button>
+    <Button  variant='mainBtn' onClick={() => inputRef.current.click()}> 
+    <Stack direction={'row'} sx={{alignItems:'center',justifyContent:'space-between',gap:'10px'}} >
+    <FileUploadIcon/> 
+    <Typography>Choose File</Typography> </Stack>
+    </Button>
     {processingFile && 
     <LineWobble 
     size={80}

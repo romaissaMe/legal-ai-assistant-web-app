@@ -90,25 +90,25 @@ React.useEffect(() => {
 
   return (
           <Stack direction='row' sx={{height:'100%',overflow:'hidden'}}>
-               <Box className="sideBar" p={'10px'} pt={'15px'} bgcolor={'chatsBgc.main'} sx={{bordeRadius:'8px',height:'100%',width:{xs:'100%',sm:'100%',md:showChats?'300px':'500px',lg:showChats?'300px':'600px'},overflowY:'scroll',overflowX:'hidden',display: { xs: closeSideBar ? 'none' : 'block', sm: closeSideBar ? 'none' : 'block',md:'block',lg:'block'}}} >
-                      <Stack direction='row' sx={{display:{lg:'block',md:'block',sm:'none',xs:'none'},justifyContent:'space-between',justifyItems:'center'}}>
-                        <Button variant={`${showChats ? 'secondaryButton' : 'clicked'}`} onClick={()=>setShowChats(true)}>
+               <Box className="sideBar" p={'10px'} pt={'20px'} bgcolor={'chatsBgc.main'} sx={{bordeRadius:'8px',height:'100%',width:{xs:'100%',sm:'100%',md:showChats?'300px':'500px',lg:showChats?'300px':'600px'},overflowY:'scroll',overflowX:'hidden',display: { xs: closeSideBar ? 'none' : 'block', sm: closeSideBar ? 'none' : 'block',md:'block',lg:'block'}}} >
+                      <Box sx={{display:{lg:'flex',md:'flex',sm:'none',xs:'none'},padding:'10px',justifyContent:'space-around'}}>
+                        <Button variant={`${showChats ? 'secondaryButton' : 'clicked'}`} marginRight='5px' onClick={()=>setShowChats(true)}>
                           Chats
                         </Button>
                         <Button variant={`${  !showChats ? 'secondaryButton' : 'clicked'}`} onClick={()=>setShowChats(false)}>
                           Sources
                         </Button>
-                      </Stack>
+                      </Box>
                       
-                      <IconButton  size='small' onClick={() =>setCloseSideBar((prev) => !prev)} sx={{display:{xs:'block',sm:'block',md:'none',lg:'none'}}}><CloseIcon/></IconButton>
+                      <IconButton  size='small' onClick={() =>setCloseSideBar((prev) => !prev)} sx={{display:{xs:'block',sm:'block',md:'none',lg:'none'},color:'sideBarTextColor.main'}}><CloseIcon/></IconButton>
                       {showChats?
                         chats.map((item,i)=>{
                         return <List>
-                              <ListItem disablePadding sx={{backgroundColor:currentChat==item.chat_id?'grey':'transparent'}}>
+                              <ListItem disablePadding sx={{backgroundColor:currentChat==item.chat_id?'callAction.light':'transparent', color:currentChat==item.chat_id?'sideBarTextColor.secondary':'sideBarTextColor.main'}}>
                                 <ListItemButton>
                                   <ListItemText key={i} onClick={() => handleClickChat(item.chat_id)} primary={item.title} sx={{display:'inline-block', fontSize:'14px', whiteSpace: 'nowrap', overflow:'hidden',textOverflow: 'ellipsis',marginRight:'10px'}} />
                                   <ListItemIcon>
-                                    <DeleteSweepOutlinedIcon fontSize='small' sx={{color:'#c7c6da'}} onClick={()=>handleDeleteChat(item.chat_id)}/> 
+                                    <DeleteSweepOutlinedIcon fontSize='small' sx={{color:currentChat==item.chat_id?'sideBarTextColor.secondary':'sideBarTextColor.main'}} onClick={()=>handleDeleteChat(item.chat_id)}/> 
                                   </ListItemIcon>
                                   
                                 </ListItemButton>

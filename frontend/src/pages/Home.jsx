@@ -2,6 +2,8 @@ import { Typography, Box, Button} from '@mui/material'
 import React from 'react'
 import { NewtonsCradle } from '@uiball/loaders'
 import { useNavigate } from 'react-router-dom'
+import backgroundImage from '../images/backimg.jpg';
+
 
 
 function Home({setPage}) {
@@ -14,8 +16,9 @@ function Home({setPage}) {
     setPage('')
   },[])
   return (
-    <Box display={'flex'} gap={'40px'} sx={{flexDirection:'column',marginTop:'20vh',alignItems:'center',overflow:'clip',padding:'20px'}}>
-        <Typography sx={{textAlign:'center',fontWeight:'800',color:'chatsBgc.main',fontSize:'25px'}}> 
+    <Box display={'flex'} className="home"  gap={'40px'} sx={{flexDirection:'column',alignItems:'center',overflow:'clip',padding:'20px',height:'100%'}}>
+      {/* <img src={backgroundImage} alt="" /> */}
+        <Typography sx={{textAlign:'center',fontWeight:'800',color:'chatsBgc.main',fontSize:'25px',marginTop:'20vh'}}> 
             Ask Your Legal Ai Assistant
         </Typography>
         

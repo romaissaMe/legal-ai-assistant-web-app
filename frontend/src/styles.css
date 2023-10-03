@@ -25,17 +25,17 @@ html,body{
   padding:8px;
   padding-bottom: 1px;
   outline:none;
-  border: none;
+  /* background-color: #E6EEFF; */
   background-color: #E6EEFF;
-  border-bottom: 1px solid #1b2962;
-  border-radius: 10px;
   text-align: justify;
   font-size: 18px;
   resize: none;
-  background-color:#E6EEFF ;
-  color: #4c5661;
+  color: #2F4F4F;
   font-weight: 300;
   width: 100%;
+  border: 1px solid #B0C4DE; /* Border color and thickness */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px #B0C4DE; /* Shadow properties */
 }
 
 .textArea::-webkit-scrollbar{
@@ -43,16 +43,16 @@ html,body{
 }
 
 .textArea::placeholder {
-  color: #4c5661;
+  color: #8296b0;
 }
 .textArea:hover {
-  border-bottom: 2px solid #1b2962;
+  border-bottom: 2px solid #E6EEFF;
 }
 .textArea:focus {
-  border-bottom: 2px solid #1b2962;
+  border-bottom: 2px solid #E6EEFF;
 }
 .textArea:active{
-  border-bottom: 2px solid #1b2962;
+  border-bottom: 2px solid #E6EEFF;
 }
 
 .scrol-box::-webkit-scrollbar-thumb {
@@ -85,4 +85,8 @@ html,body{
 .sideBar::-webkit-scrollbar {
   height: 1rem;
   width: 0.5rem;
+}
+.home{
+  background:url('./images/balance of justice (2).png');
+  background-size: 'cover';
 }

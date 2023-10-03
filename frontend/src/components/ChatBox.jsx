@@ -60,7 +60,7 @@ function ChatBox() {
     },[conversation])
   return (
     <Box sx={{height:'100%',overflowY:'hidden',position:'relative',overflowX:'hidden',width:{xs:closeSideBar?'100%':'0%',sm:closeSideBar?'100%':'0%',md:'100%',lg:'100%'}}}>
-    <Box sx={{position:'relative',width:'100%',marginTop:'10px',padding:'5px',paddingTop:'0px',paddingBottom:'0px',height:'calc( 100% - 100px)',maxHeight:'calc( 100% - 100px)',overflowY:'scroll',overflowX:'hidden'}} className="scrol-box" >
+    <Box bgcolor={'chatBgc.main'} sx={{position:'relative',width:'100%',marginTop:'10px',padding:'2%',paddingBottom:'0px',height:'calc( 100% - 100px)',maxHeight:'calc( 100% - 100px)',overflowY:'scroll',overflowX:'hidden'}} className="scrol-box" >
       
           <InitConvo/>
           {conversation && conversation.map((msg,index)=>{
@@ -75,10 +75,10 @@ function ChatBox() {
           
     </Box>
     <form onSubmit={handleSubmit} style={{width:'96%',bordeRadius:'8px',flex:1}}>
-    <Stack direction={'row'} useFlexGap sx={{alignItems:'center', justifyContent:'flex-start',width:'100%',margin:'0px',position:'absolute', bottom:'3px',left:'5px'}} >
+    <Stack direction={'row'} useFlexGap sx={{alignItems:'center', justifyContent:'flex-start',width:{xs:'100%',sm:'90%',md:'80%',lg:'80%'}, margin:'0px',position:'absolute', bottom:'15px',left:{xs:'5px',sm:'50%',md:'50%',lg:'50%'},transform:{xs:'0',sm:'translateX(-50%)',md:'translateX(-50%)',lg:'translateX(-50%)'}}} >
       <QuestionField/>
-      <IconButton type='submit' onClick={handleClick}>
-        <SendOutlinedIcon sx={{width:'20px',color:'#1b2962'}} />
+      <IconButton type='submit' size='large' onClick={handleClick}>
+        <SendOutlinedIcon  sx={{color:'#1b2962'}} />
       </IconButton>
     </Stack>
     </form>

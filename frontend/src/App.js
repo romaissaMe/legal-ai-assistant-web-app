@@ -20,7 +20,7 @@ export default function App() {
         <Box flexGrow={1} sx={{height:'100%',overflowY:'hidden'}}>
           
            <Routes>
-              <Route path='/' element={<Home setPage={setPage}/>}/>
+              <Route path='/' element={<Home  setPage={setPage}/>}/>
               <Route path='/chat' element={<Chat setPage={setPage}/>}/>
             </Routes>
           

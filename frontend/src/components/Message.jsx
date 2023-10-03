@@ -34,11 +34,11 @@ function Message({type,message,image,index}) {
             <Box>{time.toLocaleTimeString()}</Box>
         </Stack>
         <Stack>
-          <Typography variant='msg' mt={'0px'} sx={{justifySelf:'start',fontWeight: 100}}>
+          <Typography variant='msg' mt={'0px'} sx={{justifySelf:'start'}}>
               {message}
           </Typography>
           {image && 
-          <img src={`/${image}`} alt='img' style={{width:'250px',height:'300px',objectFit:'cover', border: '4px solid #1b2962', 
+          <img src={`/${image}`} alt='img' style={{width:'250px',height:'300px', marginTop:'2px',objectFit:'cover', border: '3px solid #D89B00', 
           boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
           borderRadius: '8px',
           overflow: 'hidden'}}/>
