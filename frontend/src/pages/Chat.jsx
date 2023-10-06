@@ -90,7 +90,7 @@ React.useEffect(() => {
 
   return (
           <Stack direction='row' sx={{height:'100%',overflow:'hidden'}}>
-               <Box className="sideBar" p={'10px'} pt={'20px'} bgcolor={'chatsBgc.main'} sx={{bordeRadius:'8px',height:'100%',width:{xs:'100%',sm:'100%',md:showChats?'300px':'500px',lg:showChats?'300px':'600px'},overflowY:'scroll',overflowX:'hidden',display: { xs: closeSideBar ? 'none' : 'block', sm: closeSideBar ? 'none' : 'block',md:'block',lg:'block'}}} >
+               <Box className="sideBar" p={'10px'} pt={'20px'} bgcolor={'chatsBgc.main'} sx={{borderRadius:'8px',height:'100%',width:{xs:'100%',sm:'100%',md:showChats?'300px':'500px',lg:showChats?'300px':'600px'},overflowY:'scroll',overflowX:'hidden',display: { xs: closeSideBar ? 'none' : 'block', sm: closeSideBar ? 'none' : 'block',md:'block',lg:'block'},transition:'all 0.5s ease-in-out'}} >
                       <Box sx={{display:{lg:'flex',md:'flex',sm:'none',xs:'none'},padding:'10px',justifyContent:'space-around'}}>
                         <Button variant={`${showChats ? 'secondaryButton' : 'clicked'}`} marginRight='5px' onClick={()=>setShowChats(true)}>
                           Chats

@@ -101,6 +101,20 @@ const theme = createTheme({
                     },
                   },
                 },
+                {
+                  props: { variant: 'homeBtn' },
+                  style: {
+                    textTransform: 'none',
+                    fontWeight: 500,
+                    fontSize: 14,
+                    backgroundColor:'#D89B00',
+                    color:'#FFFFFF',
+                    '&:hover': {
+                      backgroundColor: 'transparent', 
+                      transition:'background-color 0.7s, color 0.9s',
+                    },
+                  },
+                },
               ],
             },
         },
